@@ -6,7 +6,9 @@ function App() {
   return (
     <React.Fragment>
       <Navbar></Navbar>
-      <Playground></Playground>
+      <div className='container'>
+        <Playground></Playground>
+      </div>
     </React.Fragment>
   );
 }
