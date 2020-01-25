@@ -1,12 +1,13 @@
 import React from 'react';
+import Navbar from './Navbar';
+import Playground from './Playground';
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h2>Learning React</h2>
-      </header>
-    </div>
+    <React.Fragment>
+      <Navbar></Navbar>
+      <Playground></Playground>
+    </React.Fragment>
   );
 }
 
