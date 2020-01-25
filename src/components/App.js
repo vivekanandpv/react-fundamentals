@@ -9,6 +9,12 @@ function App() {
       <header className='App-header'>
         <h2>Learning React</h2>
         <p>Counter: {counter}</p>
+        <button
+          className='btn btn-primary'
+          onClick={() => setCounter(counter + 1)}
+        >
+          Counter++
+        </button>
       </header>
     </div>
   );
