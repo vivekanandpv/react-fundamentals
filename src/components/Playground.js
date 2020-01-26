@@ -3,6 +3,12 @@ import React, { useEffect } from 'react';
 const Playground = props => {
   useEffect(() => {
     console.log('Playground is rendered');
+
+    return () => {
+      console.log(
+        'React cleans up before running this rendering of playground'
+      );
+    };
   });
 
   return (
