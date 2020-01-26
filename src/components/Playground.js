@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState, createRef } from 'react';
 
 const Playground = () => {
+  const [headerText, setHeaderText] = useState('');
+
+  const inputRef = createRef();
+
+  const changeHandler = e => {
+    setHeaderText(inputRef.current.value);
+  };
+
   return (
     <React.Fragment>
-      <div className='jumbotron jumbotron-fluid'>
-        <div className='container'>
-          <h1 className='display-4'>Welcome to Home</h1>
-          <p className='lead'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </div>
-      </div>
+      <h2>{headerText}</h2>
+      <hr />
+      <input
+        type='text'
+        className='form-control'
+        ref={inputRef}
+        onChange={e => changeHandler(e)}
+      />
     </React.Fragment>
   );
 };
