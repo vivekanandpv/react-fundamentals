@@ -1,19 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FormInput from './FormInput';
 
 const Playground = () => {
+  const nameRef = React.createRef();
+  const [name, setName] = useState('');
+
+  const changeHandler = () => {
+    setName(nameRef.current.value);
+  };
+
   return (
     <React.Fragment>
-      <div className='jumbotron jumbotron-fluid'>
-        <div className='container'>
-          <h1 className='display-4'>Welcome to Home</h1>
-          <p className='lead'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </div>
-      </div>
+      <h4>Name: {name}</h4>
+      <hr />
+      <FormInput ref={nameRef} handler={changeHandler}></FormInput>
     </React.Fragment>
   );
 };
