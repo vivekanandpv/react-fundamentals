@@ -1,12 +1,24 @@
 import React, { useEffect } from 'react';
 
 const Playground = props => {
+  //  React will apply every effect used by the component, in the order they were specified.
+
   useEffect(() => {
-    console.log('Playground is rendered');
+    console.log('Playground is rendered: First');
 
     return () => {
       console.log(
-        'React cleans up before running this rendering of playground'
+        'React cleans up before running this rendering of playground (first)'
+      );
+    };
+  });
+
+  useEffect(() => {
+    console.log('Playground is rendered: Second');
+
+    return () => {
+      console.log(
+        'React cleans up before running this rendering of playground (second)'
       );
     };
   });
