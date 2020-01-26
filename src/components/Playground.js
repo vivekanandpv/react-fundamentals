@@ -18,7 +18,13 @@ const Playground = () => {
     <React.Fragment>
       <h3>My friends</h3>
       {friends.map((f, i) => (
-        <Person firstName={f} index={i} key={i}></Person>
+        <Person key={i}>
+          <div className='alert alert-primary' role='alert'>
+            <h4>
+              {i}. {f}
+            </h4>
+          </div>
+        </Person>
       ))}
     </React.Fragment>
   );
