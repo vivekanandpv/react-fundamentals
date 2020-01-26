@@ -7,7 +7,16 @@ function App() {
     <React.Fragment>
       <Navbar></Navbar>
       <div className='container'>
-        <Playground></Playground>
+        <Playground
+          year={2020}
+          enumEmulation='India'
+          books={['C++', 'Java', 'C#']}
+          car={{ model: 'MG Hector' }}
+          firstName='Vrajesh'
+          isActive={true}
+          stringOrNumber={1900}
+          key={1}
+        ></Playground>
       </div>
     </React.Fragment>
   );
