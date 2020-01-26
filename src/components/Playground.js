@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Playground = props => {
+  useEffect(() => {
+    console.log('Playground is rendered');
+  });
+
   return (
     <React.Fragment>
       <div className='jumbotron jumbotron-fluid'>
