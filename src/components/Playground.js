@@ -1,19 +1,25 @@
 import React from 'react';
+import Person from './Person';
 
 const Playground = () => {
+  const friends = [
+    'Ravindra',
+    'Mahesh',
+    'Abhinav',
+    'Pranjal',
+    'Tejas',
+    'Nirmalya',
+    'Abhishek',
+    'Rajat',
+    'Vidit'
+  ];
+
   return (
     <React.Fragment>
-      <div className='jumbotron jumbotron-fluid'>
-        <div className='container'>
-          <h1 className='display-4'>Welcome to Home</h1>
-          <p className='lead'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </div>
-      </div>
+      <h3>My friends</h3>
+      {friends.map((f, i) => (
+        <Person firstName={f} index={i} key={i}></Person>
+      ))}
     </React.Fragment>
   );
 };
