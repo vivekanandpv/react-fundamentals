@@ -34,4 +34,9 @@ Playground.propTypes = {
   enumEmulation: PropTypes.oneOf(['India', 'USA', 'Japan', 'Germany'])
 };
 
+Playground.defaultProps = {
+  firstName: 'Default name',
+  stringOrNumber: 'Default string or number'
+};
+
 export default Playground;

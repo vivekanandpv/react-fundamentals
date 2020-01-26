@@ -12,9 +12,9 @@ function App() {
           enumEmulation='India'
           books={['C++', 'Java', 'C#']}
           car={{ model: 'MG Hector' }}
-          firstName='Vrajesh'
+          firstName='Vrajesh' //  This will override the defaultProp
           isActive={true}
-          stringOrNumber={1900}
+          // stringOrNumber={1900}  //  commented to show defaultProp kicks in
           key={1}
         ></Playground>
       </div>
