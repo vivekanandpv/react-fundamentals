@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 
 const Playground = props => {
+  //  effect runs only if the dependent property (props.counter in this case) changes
+  //  performance optimization requirement
+  //  keep the effect blocks separate (single responsibility principle)
   useEffect(() => {
     console.log('Playground is rendered');
 
@@ -9,7 +12,7 @@ const Playground = props => {
         'React cleans up before running this rendering of playground'
       );
     };
-  });
+  }, [props.counter]);
 
   return (
     <React.Fragment>
@@ -24,10 +27,16 @@ const Playground = props => {
             Counter++
           </button>
           <button
-            className='btn btn-primary'
+            className='btn btn-primary mr-2'
             onClick={() => props.handler(props.counter - 1)}
           >
             Counter--
+          </button>
+          <button
+            className='btn btn-primary mr-2'
+            onClick={() => props.handler(props.counter)}
+          >
+            Counter |
           </button>
         </div>
       </div>
