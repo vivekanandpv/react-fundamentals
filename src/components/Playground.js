@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Playground = props => {
   //  effect runs only if the dependent property (props.counter in this case) changes
   //  performance optimization requirement
   //  keep the effect blocks separate (single responsibility principle)
+  const [index, setIndex] = useState(0);
+
   useEffect(() => {
     console.log('Playground is rendered');
 
@@ -13,6 +15,10 @@ const Playground = props => {
       );
     };
   }, [props.counter]);
+
+  useEffect(() => {
+    console.log('General block effect');
+  }, [index]);
 
   return (
     <React.Fragment>
@@ -34,7 +40,7 @@ const Playground = props => {
           </button>
           <button
             className='btn btn-primary mr-2'
-            onClick={() => props.handler(props.counter)}
+            onClick={() => setIndex(index + 1)}
           >
             Counter |
           </button>
