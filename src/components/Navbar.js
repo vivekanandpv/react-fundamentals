@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Navbar = () => {
+  useEffect(() => {
+    console.log('Navbar is rendered');
+  });
+
   return (
     <React.Fragment>
       <nav className='navbar navbar-dark bg-primary'>

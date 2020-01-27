@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './Navbar';
 import Playground from './Playground';
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    console.log('App is rendered');
+  });
 
   return (
     <React.Fragment>
       <Navbar></Navbar>
       <div className='container'>
-        <Playground handler={setCounter} counter={counter}></Playground>
+        <Playground></Playground>
       </div>
     </React.Fragment>
   );
